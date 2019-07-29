@@ -1,0 +1,11 @@
+div{
+    border: yellow solid;
+    width: 50%;
+    color: aqua;
+}
+
+#div1{
+    border: black solid;
+    width: 50%;
+    color: red;
+}
