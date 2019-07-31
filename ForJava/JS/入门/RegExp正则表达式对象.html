@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //RegExp
+
+    //匹配单个字符 [a] 或者[ab] [a-z] [a-zA-Z0-9_]
+    //特殊含义的  \d  单个数字   \w 单个字母
+
+    //量词
+    // *  出现0次或多次
+    // ？ 出现0次或1次
+    // +  出现1次或多次
+    // {m,n}  次数=>m <=n
+    // {,n}  最多n次
+    // {m,}  最少m次
+
+    //   \w*  ->>单词，出现0次或多次
+    //   \w{m,n}
+
+    //开始结束符号
+    //^  开始
+    //$  结束
+
+    //对象
+    var tagExp = new RegExp("^\\w{6,12}$")
+    var reg = /^\w*$/;
+
+    document.write(tagExp.test("zhangsan")+"<br/>");
+
+
+
+</script>
+</body>
+</html>

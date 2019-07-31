@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+</head>
+<body>
+
+<div>
+    <img src="../img/001.JPG" id="light">
+</div>
+
+<script type="text/javascript">
+    var light = document.getElementById("light");
+
+    var on = true;
+
+    function turn() {
+        if(on){
+            on=false;
+            light.src="../img/002.JPG";
+        }
+        else{
+            on=true;
+            light.src="../img/001.JPG";
+        }
+    }
+
+    setInterval(turn,1000);
+
+
+</script>
+
+
+</body>
+</html>

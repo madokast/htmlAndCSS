@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="form" action="#" method="get">
+    <input type="text" id="username" placeholder="username" name="username">
+    <span id="spanUsr"></span>
+    <br />
+    <input type="password" id="psd" placeholder="password" name="password">
+    <span id="spanPsd"></span>
+    <br />
+    <input type="submit" value="提交">
+</form>
+<script type="text/javascript">
+    var username = document.getElementById("username");
+    var psd = document.getElementById("psd");
+
+    var spanUsr = document.getElementById("spanUsr");
+    var spanPsd = document.getElementById("spanPsd");
+
+
+    var form = document.getElementById("form");
+
+    isUsr = false;
+    isPsd = false;
+
+    username.onblur=function () {
+        if(username.value.length>5){
+            spanUsr.innerText=" OK";
+            isUsr=true;
+        }
+        else{
+            spanUsr.innerText=" X";
+            isUsr=false;
+        }
+    };
+
+    psd.onblur=function () {
+        if(psd.value.length>5){
+            spanPsd.innerText=" OK";
+            isPsd=true;
+        }
+        else{
+            spanPsd.innerText=" X";
+            isPsd=false;
+        }
+    };
+
+    form.onsubmit = function () {
+        return isPsd&&isUsr;
+    }
+
+
+
+
+
+</script>
+
+</body>
+</html>

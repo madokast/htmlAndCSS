@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div {
+            border: aqua 1px solid;
+            color: darkgoldenrod;
+            float: left;
+            margin: 5px 5px 5px 5px;
+            padding: 1px 1px 1px 1px;
+        }
+
+        div.clear {
+            clear: both;
+        }
+    </style>
+</head>
+<body>
+<script type="text/javascript">
+    var left = 1;
+    var right = 1;
+    while (left < 10) {
+        right = 1;
+        while (right <= left) {
+            if (right == 1) {
+                document.write(
+                    "<div class='clear'>" + left + " * " + right + " = " + ((((right * left)) >= 10) ? "" : " ") + (right * left) + "</div>"
+                );
+            } else {
+
+                document.write(
+                    "<div>" + left + " * " + right + " = " + ((((right * left)) >= 10) ? "" : " ") + (right * left) + "</div>"
+                );
+            }
+            right++;
+        }
+        left++;
+    }
+
+
+</script>
+</body>
+</html>

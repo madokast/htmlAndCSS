@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>Bootstrap HelloWorld</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- jQuery (Bootstrap 的所有 JavaScript 插件都依赖 jQuery，所以必须放在前边) -->
+    <script src="js/jquery-3.4.1.js"></script>
+    <!-- 加载 Bootstrap 的所有 JavaScript 插件。你也可以根据需要只加载单个插件。 -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <style type="text/css">
+        div.inner{
+            border: 1px red solid;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+        <div class="col-lg-1 col-xs-6 col-sm-2 col-sm-4 inner">栅格</div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+<!--十二个格子
+    不同大小的设备都是一行12个格子
+    但是可以指定占格子数目
+        pc上4个格子
+        手机上12个格子
+
+    定义容器。== table
+        分类：container container-fluid
+    定义行。 == tr
+        样式 row
+    定义元素。== 所占的格子数目
+        col-设备代号-格子数目(1-12)
+
+            设备代号，从小到大： xs xm md lg
+            xs 手机   col-xs-12。。。
+            sm pid
+            md 笔记本
+            lg 大屏幕
+-->

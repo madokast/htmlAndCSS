@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #div3{
+            border:  1px red solid;
+            width: 10px;
+            height: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="pp">
+    <div id="div1">p本文结点</div>
+</div>
+<a href="javascript:void(0)" id="del">删除p文本结点</a>
+<script type="text/javascript">
+    //树结构
+    //子父关系
+    //添加子标签？
+    //动态的更新文档的状态
+    //核心dom xml-dom html-dom
+
+    //document
+    //element
+    //attribute
+    //text
+    //comment 注释
+    //node 结点
+
+    //核心document
+
+    //Node
+    //所有DOM对象都可以看做node
+    //增删改
+    //appendChild
+    //removeChild
+
+    var pp = document.getElementById("pp");
+    var del = document.getElementById("del");
+    var div1 = document.getElementById("div1");
+    del.onclick = function () {
+        pp.removeChild(div1);
+        var div3 = document.createElement("div3");
+        div3.setAttribute("id","div3");
+        div3.innerText="我出现了";
+        pp.appendChild(div3);
+    }
+
+
+    document.write(div1.parentNode);
+    document.write(pp.parentNode);
+
+
+
+</script>
+
+</body>
+</html>

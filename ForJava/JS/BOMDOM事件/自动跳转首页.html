@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        span{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<p id="pp" align="center"><span id="span"></span>&nbsp秒后自动跳转...</p>>
+
+<script>
+    var num = 5;
+    var pp = document.getElementById("span");
+    pp.innerText = num;
+    function countDown() {
+        num--;
+        if(num<1){
+            window.location.href="https://www.baidu.com/";
+        }
+        pp.innerText = num;
+    }
+
+    setInterval(countDown,1000);
+
+</script>
+</body>
+</html>

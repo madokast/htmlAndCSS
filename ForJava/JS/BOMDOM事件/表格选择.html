@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        #div{
+            text-align: center;
+        }
+        #table{
+            text-align: center;
+            margin:0 auto;
+            background-color: black;
+        }
+        td,th{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="div">
+    <table id="table" align="center" border="1px">
+        <caption>学生信息表</caption>
+<!--        <tr>-->
+<!--            <td><input class="checkSS" type="checkbox"></td>-->
+<!--            <td>-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;编号-&#45;&#45;&#45;&#45;&#45;&#45;&#45;&#45;</td>-->
+<!--        </tr>-->
+    </table>
+    <br>
+
+    <input id="allOk" type="button" value="全选">
+    <input id="allNo" type="button" value="全不选">
+    <input id="reverse" type="button" value="反选">
+</div>
+<script type="text/javascript">
+    var table = document.getElementById("table");
+
+    trs = [];
+
+    function getTr(num) {
+        var tr = document.createElement("tr");
+
+        tr.innerHTML = "<td class='td1'><input class=\"checkSS\" type=\"checkbox\"></td>\n" +
+            "            <td class='td2'>-----------"+num+"---------</td>";
+
+        trs.push(tr);
+
+        return tr;
+    }
+
+    table.appendChild(getTr(1));
+    table.appendChild(getTr(2));
+    table.appendChild(getTr(3));
+    table.appendChild(getTr(4));
+
+    var td1s = document.getElementsByClassName("td1");
+    var td2s = document.getElementsByClassName("td2");
+    for (let i = 0; i < td1s.length; i++) {
+        td1s[i].onmouseover=function () {
+            td1s[i].style.backgroundColor="red";
+            td2s[i].style.backgroundColor="red";
+        };
+
+        td1s[i].onmouseout=function () {
+            td1s[i].style.backgroundColor="white";
+            td2s[i].style.backgroundColor="white";
+        };
+
+        td2s[i].onmouseover=function () {
+            td1s[i].style.backgroundColor="red";
+            td2s[i].style.backgroundColor="red";
+        };
+
+        td2s[i].onmouseout=function () {
+            td1s[i].style.backgroundColor="white";
+            td2s[i].style.backgroundColor="white";
+        };
+
+    }
+
+    document.getElementById("allOk").onclick = function () {
+        var checks = document.getElementsByClassName("checkSS");
+        for (let i = 0; i < checks.length; i++) {
+            checks[i].checked = true;
+        }
+    }
+
+    document.getElementById("allNo").onclick = function () {
+        var checks = document.getElementsByClassName("checkSS");
+        for (let i = 0; i < checks.length; i++) {
+            checks[i].checked = false;
+        }
+    }
+
+    document.getElementById("reverse").onclick = function () {
+        var checks = document.getElementsByClassName("checkSS");
+        for (let i = 0; i < checks.length; i++) {
+            if(checks[i].checked){
+                checks[i].checked=false;
+            }else{
+                checks[i].checked=true;
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

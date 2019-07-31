@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    function fun() {
+        alert("我右边点了");
+    }
+
+</script>
+
+
+<img id="light" src="../img/001.JPG" alt="灯泡"/>
+
+
+<script  type="text/javascript">
+    var light = document.getElementById("light");
+
+    var on = true;
+    function turn(){
+        if(on){
+            light.src = "../img/002.JPG";
+            on=false;
+        }
+        else{
+            light.src = "../img/001.JPG";
+            on=true;
+        }
+    }
+
+    light.onclick = turn;
+
+    //事件学习
+    //某县组建被执行了某些操作后，出发某些代码的执行
+    //如鼠标点击某组件
+
+    //绑定事件
+</script>
+
+</body>
+</html>

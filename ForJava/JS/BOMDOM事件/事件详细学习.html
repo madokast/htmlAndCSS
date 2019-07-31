@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form id="form" action="#" method="get">
+    <input id="username" name="username"><span id="span"></span><br>
+    <input id="sub" type="submit" value="提交">
+</form>
+<br />
+<hr />
+
+<script type="text/javascript">
+
+    //鼠标
+    //键盘
+
+    //事件：某县操作，如双击
+    //事件源：组建，如按钮，文本输入框
+    //监听器：代码
+    //注册监听：
+
+    //常见的事件
+    //点击事件 onclick ondblclick  单机 双极
+    //焦点事件 onblur onfocus 失去焦点 获得焦点
+    //加载事件 加载完成
+    //鼠标事件 按下 松开 移到 移开
+    //键盘事件 按下 松开 按下并松开
+    //选中 改变 change select
+    //表单事件 onsubmit
+
+
+    //焦点事件
+
+    //常见事件演示
+    //失去焦点事件 一般用于表单校验
+    var span = document.getElementById("span");
+
+    document.getElementById("username").onblur=function () {
+        span.innerText="恭喜";
+    };
+
+    document.getElementById("username").onfocus=function () {
+        span.innerText="";
+    };
+
+    document.getElementById("username").onkeypress=function (event) {
+        if(event.keyCode==13){
+            location.href="https://www.baidu.com";
+        }
+    };
+
+
+    //加载事件 onload
+    window.onload = function () {
+        document.getElementById("p1").innerText="拿到了"
+    };
+
+
+    //鼠标事件
+    window.onload = function () {
+        document.getElementById("p1").onmouseover=function () {
+            document.getElementById("p1").style.color="red";
+        };
+
+        document.getElementById("p1").onmouseout=function () {
+            document.getElementById("p1").style.color="black";
+        };
+
+        document.getElementById("p1").onmousedown=function () {
+            location.href="https://www.baidu.com";
+        };
+
+    };
+
+    document.getElementById("form").onsubmit=function () {
+        if(document.getElementById("username").value=="123"){
+            return true;
+        }
+        return false;
+    }
+
+</script>
+<p id="p1">来了</p>
+</body>
+</html>

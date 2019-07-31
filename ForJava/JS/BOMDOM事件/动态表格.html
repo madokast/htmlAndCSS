@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        div{
+            text-align:center;
+            margin:0 auto;
+        }
+        #table{
+            text-align: center;
+            margin:0 auto;
+            background-color: black;
+        }
+        td,th{
+           background-color: white;
+        }
+    </style>
+</head>
+<body>
+<div id="div1">
+    <input id="inputNumber" type="text" name="number" placeholder="请输入编号"/>
+    <input id="inputName" type="text" name="name" placeholder="请输入姓名"/>
+    <input id="inputGender" type="text" name="gender" placeholder="请输入性别"/>
+    <input id="buttonAdd" type="button" value="添加">
+</div>
+<div id="div2">
+    <table id="table">
+        <thead>学生信息表</thead>
+        <tr>
+            <th>编号</th>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>操作</th>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+    var inputNumber = document.getElementById("inputNumber");
+    var inputName = document.getElementById("inputName");
+    var inputGender = document.getElementById("inputGender");
+    var buttonAdd = document.getElementById("buttonAdd");
+
+    var table = document.getElementById("table");
+
+    buttonAdd.onclick=function () {
+        // var number = inputNumber.getAttribute("value");
+        var number = inputNumber.value;
+        var name = inputName.value;
+        var gender = inputGender.value;
+
+        var tr = document.createElement("tr");
+        var tdNum = document.createElement("td");
+        var tdName = document.createElement("td");
+        var tdGender = document.createElement("td");
+        var tdOperate = document.createElement("td");
+
+        var aDelete = document.createElement("a");
+        aDelete.innerText="删除";
+        aDelete.setAttribute("href","javascript:void(0)");
+        aDelete.onclick = function(){
+            table.removeChild(tr);
+        };
+
+        tdNum.innerText=number;
+        tdName.innerText=name;
+        tdGender.innerText=gender;
+        tdOperate.appendChild(aDelete);
+
+        tr.appendChild(tdNum);
+        tr.appendChild(tdName);
+        tr.appendChild(tdGender);
+        tr.appendChild(tdOperate);
+
+        table.appendChild(tr);
+    };
+
+
+</script>
+</body>
+</html>
