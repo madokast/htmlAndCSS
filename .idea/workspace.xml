@@ -1,41 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="df4589d9-3d7c-4fa1-834c-5f112b55f8f1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Bootstrap/01_Hellow.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bootstrap/02_响应式布局_栅格系统.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bootstrap/03_全局CSS样式.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bootstrap/04_导航条_分页条.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bootstrap/05_轮播图.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Bootstrap/Bootstrap.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/BOM学习.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/DOM相关学习.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/DOM简单学习.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/DOM设置样式.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/check.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/事件简单学习.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/事件详细学习.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/动态表格.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/自动跳转首页.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/表单校验.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/表格选择.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/BOMDOM事件/轮播图.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/Global对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/JS基本对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/JS运算符.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/Js基础.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/Math对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/RegExp正则表达式对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/九九乘法表.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/数组对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/日期对象.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/入门/特殊语法.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ForJava/JS/地址栏对象.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ForJava/JS/Js基础.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ForJava/JS/js/Test001.js" beforeDir="false" afterPath="$PROJECT_DIR$/ForJava/JS/js/Test001.js" afterDir="false" />
-    </list>
+    <list default="true" id="df4589d9-3d7c-4fa1-834c-5f112b55f8f1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
