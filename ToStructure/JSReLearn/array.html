@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //创建数组
+        var arr = [];
+        arr = [1,2,'abc',true];
+        console.log(arr);
+        //迭代
+        for(var i = 0 ; i< arr.length ; i++){
+            console.log(arr[i]);
+        }
+        //添加元素
+        //change length
+        arr.length = 10;
+        console.log(arr);
+        for(var i = 0 ; i< arr.length ; i++){
+            console.log(arr[i]);
+        }
+        //
+        console.log("追加数组元素");
+        arr = [1,2];
+        arr[4] = 'aa';
+        for(var i = 0 ; i< arr.length ; i++){
+            console.log(arr[i]);
+        }
+        //黑科技
+        console.log("黑科技");
+        arr = [];
+        for(var i = 1 ; i<10;i*=2){
+            arr[arr.length] = i;
+        }
+        console.log(arr);
+        //
+        console.log("不黑科技");
+        arr = [];
+        for(var i = 1 ; i<10;i*=2){
+            arr.push(i);
+        }
+        console.log(arr);
+    </script>
+</body>
+</html>
