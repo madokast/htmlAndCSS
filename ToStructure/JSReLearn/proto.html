@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Student(name){
+            this.name = name;
+        }
+
+        Student.prototype.sayHi = function(){
+            console.log('hi ' + this.name);
+            
+        }
+
+        var o = new Student('abc');
+
+        console.log(o);
+        o.sayHi();
+        o.__proto__.sayHi();
+
+        console.log(o.__proto__ === Student.prototype);
+
+        console.log('//////////////////////////');
+        
+
+        function Mdk(name){
+            
+        }
+        
+    </script>
+</body>
+</html>
