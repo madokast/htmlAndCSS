@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        console.log('call bind apply');
+        // 改变 this
+
+        function fn(x,y){
+            console.log(this);
+            console.log(x+y);    
+        }
+
+        fn(2,3);
+
+        fn.call('new this',1,2);
+        // 可以指定函数的调用人
+        
+        fn.apply([1,2],[10,1]);
+        
+        var obj = {
+            name:'zrx',
+            age:10
+        };
+
+        console.log(Array.prototype.toString.call(obj));
+
+        console.dir(fn.bind([1,2]));
+        
+        
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="js/tools.js"></script>
+    <script src="js/box.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div id="container"></div>
+    <script>
+        var parent = document.getElementById('container');
+
+        var boxes = [];
+        var NUM = 10;
+
+        function newBoxes() {
+            for (var i = 0; i < NUM; i++) {
+                boxes[i] = new Box(parent, {
+                    bgcolor: 'rgb(' + Tools.getRandom(0, 255) + ',' + Tools.getRandom(0, 255) + ',' + Tools.getRandom(0, 255) + ')'
+                });
+                boxes[i].random();
+                boxes[i].init();
+            }
+        }
+
+        function removeBox(){
+            for (var i = 0; i < boxes.length; i++) {
+                boxes[i].remove();
+            }
+        }
+
+
+
+        setInterval(function(){
+            removeBox();
+            newBoxes();
+        }, 200);
+
+    </script>
+
+</body>
+
+</html>
