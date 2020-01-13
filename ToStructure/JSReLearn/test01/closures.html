@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>闭包</h1>
+    <script>
+        console.log("闭包");
+
+        // function fn(){
+        //     var n = 10;
+        //     return n;
+        // }
+
+        // console.log(fn());
+
+        function fn(){
+            var n = 10;
+            return function(){
+                return n;
+            }
+        }
+
+        console.log(fn()());
+        
+    </script>
+
+</body>
+</html>
