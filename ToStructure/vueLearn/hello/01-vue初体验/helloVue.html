@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- 开发环境版本，包含了有帮助的命令行警告 -->
+</head>
+<body>
+
+<div id="app">
+    <h2>{{message}}</h2>
+    <p>{{name}}</p>
+</div><!--入门-->
+<div id="app2">
+    <h2>列表展示</h2>
+    <ul>
+        <li v-for="item in movies">{{item}}</li>
+    </ul>
+</div><!--列表-->
+<div id="counter">
+    <h2>当前数目：{{count}}</h2>
+    <button v-on:click="count++">+</button>
+    <button @click="sub">-</button>
+</div><!--点击事件 methods属性-->
+<div id="lifecycle"></div>
+
+
+<script src="../js/vue.js"></script>
+<!--<script src="../js/helloVue.js"></script>-->
+<script id="app.js">
+    //以前是 命令时编程
+
+
+    const app = new Vue({
+        el:'#app', // 要管理的元素
+        data:{ // 定义数据
+            message:'hello, vue',
+            name:'段落内容'
+        }
+    });
+
+    let i = 0;
+    setInterval(()=>app.name=++i,1000)
+
+</script>
+<script id="app2.js">
+    let arr = ["abc",123,true,'mdk'];
+
+    const app2 = new Vue({
+        el:'#app2',
+        data: {
+            movies:arr
+            //v-for="item in movies"
+        }
+    });
+</script>
+<script id="counter.js">
+    new Vue({
+        el:'#counter',
+        data:{
+            count:0
+        },
+        methods:{
+            sub:function () {
+                console.log("sub被点击");
+                this.count--;
+            }
+        }
+    })
+</script>
+<script>
+    new Vue({
+        el:'#lifecycle',
+        beforeCreate:function () {
+            console.log("beforeCreate")
+        },
+        created:function () {
+            //一般做网络请求
+            console.log("create");
+        },
+        mounted:function () {
+            console.log("mounted");
+        }
+    });
+</script>
+</body>
+</html>
