@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}</p>
+    <ul>
+        <li :class="{active: actives[index]}" v-for="(i,index) in arr"
+            @click="liClick(index)">{{i}}
+        </li>
+    </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+            el: '#app',
+            data: {
+                message: '你好啊',
+                arr: ['abc', '123', true, 'xyz'],
+                actives: [true, false, false, false],
+                isActive: true,
+                isLine: false
+            },
+            methods: {
+                liClick: function (i) {
+                    let index = i;
+                    (function (i) {
+                        this.data.actives.fill(false, 0, this.data.actives.length);
+                        this.data.actives[i] = true;
+                    })()
+                },
+                liClicks: function (i) {
+                    return function (i) {
+                        this.methods.liClick(i)
+                    };
+                }
+            }
+        })
+    ;
+</script>
+
+</body>
+</html>

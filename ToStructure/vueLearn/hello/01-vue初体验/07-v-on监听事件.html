@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .active{
+      color: red;
+    }
+    /*.inactive{*/
+    /*  color: aqua;*/
+    /*}*/
+  </style>
+</head>
+<body>
+
+<div id="app">
+  <p>{{message}}</p>
+  <ul>
+    <li :class="{active:listClasses[i]}"
+        @click="liClick(i)"
+        v-for="(e,i) in listItems">{{e}}</li>
+  </ul>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '请点击列表',
+      listItems:["abc", "def", 'ghi'],
+      listClasses:[true,false,false]
+    },
+    methods: {
+      liClick(i){
+        this.listClasses.fill(false);
+        this.$set(this.listClasses,i,true);
+        // this.listClasses[i] = true;  //无法监听这种修改方法
+        // this.message = this.listItems[i]+"被点击";
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

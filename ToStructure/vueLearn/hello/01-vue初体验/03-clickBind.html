@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="app">
+    <div>
+        <ul>
+            <li :class="{active:classes[i]}"
+                v-for="(e,i) in movies"
+                @click="liClick(e,i)">{{e}}</li>
+        </ul>
+    </div>
+    <div>
+        <p>{{message}}</p>
+    </div>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    let movies = new Array(10);
+    let classes = new Array(10);
+    movies.fill(10);
+    movies.forEach((e,i)=>{movies[i]=Math.random()});
+    classes.fill(false)
+    console.log(movies);
+
+    new Vue({
+        el:'#app',
+        data:{
+            app:this,
+            movies:movies,
+            classes:classes,
+            message:"消息"
+        },
+        methods:{
+            liClick:function (e,i) {
+                this.movies.forEach((e,i)=>{movies[i]=Math.random()});
+                // console.log(this); //vue
+                this.message = e + "被点击";
+                this.classes.fill(false);
+                this.classes[i] = true;
+            }
+        }
+    });
+</script>
+</body>
+</html>

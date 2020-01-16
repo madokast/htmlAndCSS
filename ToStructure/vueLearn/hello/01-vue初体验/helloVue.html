@@ -23,6 +23,13 @@
     <button @click="sub">-</button>
 </div><!--点击事件 methods属性-->
 <div id="lifecycle"></div>
+<div id="bind">
+    <h3>{{url}}</h3>
+    <h3 v-html="url"></h3>
+    <h3 v-text="url"></h3>
+    <h3 v-cloak>{{url}}</h3>
+    <a v-bind:href="urll">百度二下</a>
+</div>
 
 
 <script src="../js/vue.js"></script>
@@ -32,56 +39,82 @@
 
 
     const app = new Vue({
-        el:'#app', // 要管理的元素
-        data:{ // 定义数据
-            message:'hello, vue',
-            name:'段落内容'
+        el: '#app', // 要管理的元素
+        data: { // 定义数据
+            message: 'hello, vue',
+            name: '段落内容'
         }
     });
 
     let i = 0;
-    setInterval(()=>app.name=++i,1000)
+    setInterval(() => app.name = ++i, 1000)
 
 </script>
 <script id="app2.js">
-    let arr = ["abc",123,true,'mdk'];
+    let arr = ["abc", 123, true, 'mdk'];
 
     const app2 = new Vue({
-        el:'#app2',
+        el: '#app2',
         data: {
-            movies:arr
+            movies: arr
             //v-for="item in movies"
         }
     });
 </script>
 <script id="counter.js">
     new Vue({
-        el:'#counter',
-        data:{
-            count:0
+        el: '#counter',
+        data: {
+            count: 0
         },
-        methods:{
-            sub:function () {
+        methods: {
+            sub: function () {
                 console.log("sub被点击");
                 this.count--;
             }
         }
     })
 </script>
-<script>
+<script id="lifecycle.js">
     new Vue({
-        el:'#lifecycle',
-        beforeCreate:function () {
+        el: '#lifecycle',
+        beforeCreate: function () {
             console.log("beforeCreate")
         },
-        created:function () {
+        created: function () {
             //一般做网络请求
             console.log("create");
         },
-        mounted:function () {
+        mounted: function () {
             console.log("mounted");
         }
     });
 </script>
+<script id="bind.js">
+    setTimeout(function () {
+        new Vue({
+            el:'#bind',
+            data:{
+                url:'<a href="http://www.baidu.com">百度一下<a/>',
+                urll:'http://www.baidu.com'
+            },methods: {
+
+            }
+        });
+    },1000)
+</script>
+
+
+<script id=".js">
+    new Vue({
+        el:'#',
+        data:{
+
+        },methods: {
+
+        }
+    });
+</script>
+
 </body>
 </html>

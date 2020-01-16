@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}</p>
+    <p>{{getFullName()}}</p>
+    <p>{{fullName}}</p>
+    <hr>
+    <p>总价格：{{totalPrice}}</p>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data:{
+            message:'hello',
+            firstName:'Le',
+            lastName:'James',
+            books:[
+                {id:1,price:12},
+                {id:2,price:22},
+                {id:3,price:32},
+                {id:4,price:112},
+                {id:5,price:62}
+            ]
+        },
+        methods:{
+            //每次都会重新计算
+            getFullName:function () {
+                return this.firstName+" "+this.lastName;
+            }
+        },
+        computed:{
+            //计算属性.性能高一点
+            fullName:function () {
+                return this.firstName+" "+this.lastName;
+            },
+
+            totalPrice:function () {
+                return this.books.reduce((total,item)=>total+=item.price,0);
+            }
+        }
+    })
+</script>
+
+</body>
+</html>
