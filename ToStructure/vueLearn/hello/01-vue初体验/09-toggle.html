@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <p>{{message}}</p>
+  <div>
+      <span v-if="word">
+          <label for="word">账号登陆：</label><input id="word" type="text" placeholder="请输入账号" key="word">
+      </span>
+    <span v-if="!word">
+          <label for="mail">邮箱登录：</label><input id="mail" type="text" placeholder="请输入邮箱" key="mail">
+      </span>
+    <input @click="wordToggle" type="button" value="切换">
+  </div>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello',
+      word: true
+    },
+    methods: {
+      wordToggle() {
+        this.word = !this.word;
+      }
+    }
+  })
+
+    //vue 虚拟dom
+    //增加性能 v dom
+    //
+</script>
+
+</body>
+</html>

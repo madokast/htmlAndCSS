@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件化</title>
+</head>
+<body>
+
+<div id="app">
+  <!--  组件名字和位置-->
+  <cpn></cpn>
+</div>
+<script src="../js/vue.js"></script>
+<script>
+  const myComponent = Vue.extend({
+    template:`<div>
+<h2>标题</h2>
+<p>内容</p>
+<p>内容</p>
+</div>`
+  });
+
+  // Vue.component('my-cpn',myComponent);
+
+  let app = new Vue({
+    el:'#app',
+    components:{
+      cpn:myComponent
+    }
+  });
+
+
+  //组件化
+  //页面拆分成小功能块
+
+  //组件构造器 Vue.extends
+  //注册 Vue.component
+  //使用
+</script>
+</body>
+</html>

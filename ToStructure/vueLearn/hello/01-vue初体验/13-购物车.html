@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <p>{{message}}</p>
+  <table v-if="books.length>0">
+    <thead>
+    <th></th>
+    <th>书籍名称</th>
+    <th>出版日期</th>
+    <th>价格</th>
+    <th>数量</th>
+    <th>操作</th>
+    </thead>
+    <tr v-for="(e,i) in books">
+      <th>{{i}}</th>
+      <th>{{e.name}}</th>
+      <th>{{e.date}}</th>
+      <th>{{e.price | showPrice}}</th>
+      <th>
+          <button :disabled="e.count<=1" @click="e.count--">-</button>
+          {{e.count}}
+          <button @click="e.count++">+</button>
+      </th>
+      <th><button @click="books.splice(i,1)">移除</button></th>
+    </tr>
+  </table>
+    <p v-if="books.length<=0">购物车为空</p>
+  <p>总价:￥{{totalPrice}}</p>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+  const dateForm = function f(date) {
+    return date.getFullYear() + '-' + (date.getMonth() + 1);
+  };
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello',
+      books: [
+        {
+          id: 0,
+          name: '算法导论',
+          date: dateForm(new Date(2006, 9)),
+          price: 85,
+          count: 1
+        }, {
+          id: 1,
+          name: 'UNIX编程艺术',
+          date: dateForm(new Date(2006, 2)),
+          price: 59,
+          count: 1
+        }, {
+          id: 2,
+          name: '算法珠玑',
+          date: dateForm(new Date(2008, 10)),
+          price: 39,
+          count: 1
+        }, {
+          id: 3,
+          name: '代码大全',
+          date: dateForm(new Date(2006, 3)),
+          price: 128,
+          count: 1
+        },
+      ]
+    },
+    methods: {},
+    computed: {
+      totalPrice() {
+        return this.books.reduce((p, c) => p += c.price * c.count, 0);
+      }
+    },
+      filters:{
+        showPrice(price){
+            return '￥'+price.toFixed(2);
+        }
+      }
+  })
+</script>
+
+</body>
+</html>

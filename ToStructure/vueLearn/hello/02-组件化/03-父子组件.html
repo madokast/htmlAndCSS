@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>组件化</title>
+</head>
+<body>
+
+<div id="app">
+  <cpn1></cpn1>
+  <cpn2></cpn2>
+  <script>
+    const cpnC1 = Vue.extend({
+      template:`
+    <div>
+    <h2>标题1</h2>
+    <p>内容1</p>
+</div>
+    `
+    });
+
+    const cpnC2 = Vue.extend({
+      template:`
+    <div>
+    <cpn1></cpn1>
+    <h2>标题2</h2>
+    <p>内容2</p>
+</div>
+    `,components:{
+        cpn1: cpnC1
+      }
+    });
+
+    const app = new Vue({
+      el:'#app',
+      components:{
+        // cpn1:cpnC1,
+        cpn2:cpnC2
+      }
+    });
+
+  </script>
+</div>
+<script src="../js/vue.js"></script>
+</body>
+</html>

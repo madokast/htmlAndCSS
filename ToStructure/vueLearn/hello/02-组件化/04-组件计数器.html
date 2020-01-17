@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <p>{{message}}</p>
+  <count></count>
+  <count></count>
+  <count></count>
+</div>
+<template id="count">
+  <div>
+    <p>当前计数：{{counter}}</p>
+    <button @click="increment">+</button>
+    <button @click="decrement">-</button>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+
+
+  const app = new Vue({
+    el: '#app',
+    data() {
+      return {
+        message: 'hello'
+      };
+    },
+    methods: {},
+    components: {
+      count: {
+        template: '#count',
+        data() {
+          return {
+            counter: 1
+          };
+        },
+        methods: {
+          increment() {
+            this.counter++;
+          },
+          decrement() {
+            this.counter--;
+          }
+        }
+      }
+    }
+  })
+</script>
+
+</body>
+</html>

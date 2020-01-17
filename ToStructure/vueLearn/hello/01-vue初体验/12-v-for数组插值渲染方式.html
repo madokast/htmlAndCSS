@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .active{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <p>{{message}}</p>
+    <ul>
+        <li @click="currentIndex=i"
+            :class="{active : currentIndex === i}"
+            v-for="(e,i) in letters"
+            key="e">{{e}}</li>
+    </ul>
+    <hr>
+    <ul>
+        <li v-for="e in letters">{{e}}</li>
+    </ul>
+</div>
+
+<script src="../js/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:{
+            message:'hello',
+            letters:['A','B','C','D','E','F'],
+            currentIndex :0
+        },
+        methods:{
+
+        }
+    });
+    // let toggle = true;
+    // setInterval(()=>{
+    //     if(toggle){
+    //         app.letters.splice(2,0,'Z');
+    //         toggle=!toggle;
+    //     }else {
+    //         app.letters.splice(2,1);
+    //         toggle = !toggle;
+    //     }
+    // },500)
+</script>
+
+</body>
+</html>

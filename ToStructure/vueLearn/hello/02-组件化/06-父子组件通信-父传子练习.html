@@ -8,11 +8,25 @@
 
 <div id="app">
     <p>{{message}}</p>
-    <input type="text" v-model="message">
+    <cpn :c-message="message"></cpn>
 </div>
-
+<template id="cpn">
+    <div>
+        <p>子组件得到{{cMessage}}</p>
+    </div>
+</template>
 <script src="../js/vue.js"></script>
 <script>
+    const cpn = {
+        template:'#cpn',
+        props:{
+            cMessage:{
+                type:String,
+                default:'null'
+            }
+        }
+    };
+
     const app = new Vue({
         el:'#app',
         data:{
@@ -20,6 +34,9 @@
         },
         methods:{
 
+        },
+        components:{
+            cpn
         }
     })
 </script>
