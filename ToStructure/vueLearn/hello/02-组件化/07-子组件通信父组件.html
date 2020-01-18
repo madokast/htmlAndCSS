@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <p>父组件：{{message}}</p>
+  <p>父组件收到子组件信息：{{fromSon}}</p>
+  <cpn :c-from="message" @item-click="cpnClick"></cpn>
+</div>
+<template id="cpn">
+  <div>
+    <p>子组件:{{cMessage}}</p>
+    <p>子组件:{{cFrom}}</p>
+    <p>当前显示的是：{{currentName}}</p>
+    <button v-for="item in categories"
+            @click="btnClick(item)">{{item.name}}
+    </button>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const cpn = {
+    template: '#cpn',
+    data() {
+      return {
+        cMessage: '子组件自己的东西',
+        categories: [
+          {id: 'aaa', name: '热门推荐'},
+          {id: 'bbb', name: '手机数码'},
+          {id: 'ccc', name: '家用家电'},
+          {id: 'ddd', name: '电脑办公'}
+        ],
+        currentItem: 'aaa'
+      };
+    },
+    computed: {
+      currentName() {
+        return this.categories.find(v => v.id === this.currentItem).name;
+      }
+    },
+    methods: {
+        btnClick(item){
+            this.currentItem=item.id;
+            //传递事件给父组件
+            this.$emit('item-click',item);
+        }
+    },
+    props: {
+      cFrom: {
+        type: String,
+        required: true
+      }
+    }
+  };
+
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: '父组件信息',
+        fromSon:'null'
+    },
+    methods: {
+        cpnClick(item){
+            console.log("子组件发生事件itemClick ", item);
+            this.fromSon = item.id;
+        }
+    },
+    components: {
+      cpn
+    }
+  })
+
+  //子组件发生事件
+  //需要告诉父组件
+</script>
+
+</body>
+</html>
