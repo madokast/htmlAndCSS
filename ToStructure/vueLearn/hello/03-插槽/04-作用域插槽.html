@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<div id="app">
+  <p>{{message}}</p>
+    <cpn></cpn>
+  <cpn>
+      <template slot-scope="slot">
+          <span>{{slot.send.join(" - ")}}</span>
+      </template>
+  </cpn>
+  <cpn>
+      <template slot-scope="slot">
+          <span v-for="item in slot.send">{{item}} * </span>
+      </template>
+  </cpn>
+</div>
+<template id="cpn">
+  <div>
+    <slot :send="pLang">
+      <ul>
+        <li v-for="item in pLang">{{item}}</li>
+      </ul>
+    </slot>
+  </div>
+</template>
+<script src="../js/vue.js"></script>
+<script>
+  const app = new Vue({
+    el: '#app',
+    data: {
+      message: 'hello',
+    },
+    methods: {},
+    components: {
+      cpn: {
+        template: '#cpn',
+        data() {
+          return {
+            pLang: ['Java', 'C', 'python']
+          };
+        }
+      },
+    }
+  })
+
+  //父组件想改变子组件内数据的显示方法
+  //首先需要知道数据
+</script>
+
+</body>
+</html>
