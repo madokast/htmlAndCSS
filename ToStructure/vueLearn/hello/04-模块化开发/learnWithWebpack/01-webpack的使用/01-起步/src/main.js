@@ -4,9 +4,20 @@
 console.log('main.js the entrance');
 console.log('aaaaa');
 
-import {NAME} from "./info";
+import {NAME} from "./js/info";
 
 console.log(NAME);
+
+import {add,mul} from "./js/mathUtils";
+
+console.log(add(1, 20));
+console.log(mul(10, 30));
+
+//依赖CSS
+require('./css/normal.css');
+
+//依赖less
+require('./css/special.less');
 
 //O:\Documents\GitHub\htmlAndCSS\ToStructure\vueLearn\hello\04-模块化开发
 // \learnWithWebpack\01-webpack的使用\01-起步>webpack ./src/main.js
