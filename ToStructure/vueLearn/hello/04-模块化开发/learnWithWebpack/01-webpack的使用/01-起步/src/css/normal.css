@@ -2,11 +2,11 @@ body {
     background-color: rosybrown;
 }
 
-div {
-    /*background-color: red;*/
-    height: 20%;
-    width: 50%;
-    position: absolute;
-    top: 50%;
-    background-image: url("../img/cut.jpg");
-}
+/*div {*/
+/*    !*background-color: red;*!*/
+/*    height: 20%;*/
+/*    width: 50%;*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    background-image: url("../img/cut.jpg");*/
+/*}*/

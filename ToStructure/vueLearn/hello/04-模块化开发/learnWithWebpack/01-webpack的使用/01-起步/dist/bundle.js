@@ -464,7 +464,19 @@ console.log((0, _mathUtils.mul)(10, 30));
 __webpack_require__(5);
 
 //依赖less
-__webpack_require__(9);
+__webpack_require__(7);
+
+// require('./js/vueLearn');
+
+// import Vue from "vue";
+// import App from "./vue/App.vue";
+// new Vue({
+//   el:'#app',
+//   template:'<App/>',
+//   components:{
+//     App
+//   }
+// });
 
 //O:\Documents\GitHub\htmlAndCSS\ToStructure\vueLearn\hello\04-模块化开发
 // \learnWithWebpack\01-webpack的使用\01-起步>webpack ./src/main.js
@@ -476,6 +488,9 @@ __webpack_require__(9);
 // bundle.js  3.04 kB       0  [emitted]  main
 //    [0] ./src/main.js 155 bytes {0} [built]
 //    [1] ./src/info.js 26 bytes {0} [built]
+
+//单页面富应用
+//前端路由
 
 /***/ }),
 /* 3 */
@@ -544,12 +559,9 @@ module.exports = exported;
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(1);
-var ___CSS_LOADER_GET_URL_IMPORT___ = __webpack_require__(7);
-var ___CSS_LOADER_URL_IMPORT_0___ = __webpack_require__(8);
 exports = ___CSS_LOADER_API_IMPORT___(false);
-var ___CSS_LOADER_URL_REPLACEMENT_0___ = ___CSS_LOADER_GET_URL_IMPORT___(___CSS_LOADER_URL_IMPORT_0___);
 // Module
-exports.push([module.i, "body {\r\n    background-color: rosybrown;\r\n}\r\n\r\ndiv {\r\n    /*background-color: red;*/\r\n    height: 20%;\r\n    width: 50%;\r\n    position: absolute;\r\n    top: 50%;\r\n    background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n}", ""]);
+exports.push([module.i, "body {\r\n    background-color: rosybrown;\r\n}\r\n\r\n/*div {*/\r\n/*    !*background-color: red;*!*/\r\n/*    height: 20%;*/\r\n/*    width: 50%;*/\r\n/*    position: absolute;*/\r\n/*    top: 50%;*/\r\n/*    background-image: url(\"../img/cut.jpg\");*/\r\n/*}*/", ""]);
 // Exports
 module.exports = exports;
 
@@ -558,56 +570,8 @@ module.exports = exports;
 /* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
-
-module.exports = function (url, options) {
-  if (!options) {
-    // eslint-disable-next-line no-param-reassign
-    options = {};
-  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign
-
-
-  url = url && url.__esModule ? url.default : url;
-
-  if (typeof url !== 'string') {
-    return url;
-  } // If url is already wrapped in quotes, remove them
-
-
-  if (/^['"].*['"]$/.test(url)) {
-    // eslint-disable-next-line no-param-reassign
-    url = url.slice(1, -1);
-  }
-
-  if (options.hash) {
-    // eslint-disable-next-line no-param-reassign
-    url += options.hash;
-  } // Should url be wrapped?
-  // See https://drafts.csswg.org/css-values-3/#urls
-
-
-  if (/["'() \t\n]/.test(url) || options.needQuotes) {
-    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, '\\n'), "\"");
-  }
-
-  return url;
-};
-
-/***/ }),
-/* 8 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony default export */ __webpack_exports__["default"] = (__webpack_require__.p + "img/cut.6c487dfd.jpg");
-
-/***/ }),
-/* 9 */
-/***/ (function(module, exports, __webpack_require__) {
-
 var api = __webpack_require__(0);
-            var content = __webpack_require__(10);
+            var content = __webpack_require__(8);
 
             content = content.__esModule ? content.default : content;
 
@@ -629,14 +593,14 @@ var exported = content.locals ? content.locals : {};
 module.exports = exported;
 
 /***/ }),
-/* 10 */
+/* 8 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(1);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "body {\n  font-size: 50px;\n  color: orange;\n}\n", ""]);
+exports.push([module.i, "body {\n  font-size: 10px;\n  color: orange;\n}\n", ""]);
 // Exports
 module.exports = exports;
 

@@ -1,4 +1,5 @@
 const path = require('path');
+// const HtmlWebPackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   //入口js文件
@@ -58,7 +59,25 @@ module.exports = {
             presets:['es2015']
           }
         }
+      },
+      {
+        test: /\.vue$/,
+        use:{
+          loader: 'vue-loader'
+        }
       }
     ]
+  },
+  plugin:{
+    // new HtmlWebPackPlugin()
   }
+  // resolve:{
+  //   extensions:['.js','.css','.vue'],
+  //   // alias:{
+  //   //   'vue$':'vue/dist/vue.esm.js'
+  //   // }
+  // }
+
+  //86
+
 };
