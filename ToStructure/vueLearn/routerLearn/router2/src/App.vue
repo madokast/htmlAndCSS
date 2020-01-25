@@ -1,20 +1,29 @@
 <template>
   <div id="app">
-    <router-link to="/home">home</router-link>
-    <router-link to="/profile">profile</router-link>
-    <router-view></router-view>
+    <router-link to="/promise">promise</router-link>
+    <router-link to="/PromisLearn02">PromisLearn02</router-link>
+    <router-link to="/VuexLearn">VuexLearn</router-link>
+    <router-link to="/NetComponent">NetComponent</router-link>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld'
 import router from "./router";
+import PromiseLearn from './components/learn/PromiseLearn'
 
 export default {
   name: 'App',
   router,
+  data(){
+    return{
+      message:'promiseLearn'
+    };
+  },
   components: {
-    HelloWorld
+    HelloWorld,
+    PromiseLearn
   }
 }
 </script>
