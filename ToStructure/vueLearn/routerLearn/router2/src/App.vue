@@ -4,6 +4,7 @@
     <router-link to="/PromisLearn02">PromisLearn02</router-link>
     <router-link to="/VuexLearn">VuexLearn</router-link>
     <router-link to="/NetComponent">NetComponent</router-link>
+    <router-link to="/NetComponet2">NetComponet2</router-link>
     <router-view/>
   </div>
 </template>
