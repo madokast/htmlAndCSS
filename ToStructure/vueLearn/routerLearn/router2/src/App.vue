@@ -5,6 +5,7 @@
     <router-link to="/VuexLearn">VuexLearn</router-link>
     <router-link to="/NetComponent">NetComponent</router-link>
     <router-link to="/NetComponet2">NetComponet2</router-link>
+    <router-link to="/SpringbootTest">SpringbootTest</router-link>
     <router-view/>
   </div>
 </template>

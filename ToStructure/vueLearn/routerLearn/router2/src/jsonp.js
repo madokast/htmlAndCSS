@@ -23,7 +23,7 @@ export default function originPJSONP(option) {
       window[callback] = function (result) {
         body.removeChild(script);
         resolve(result);
-      }
+      };
       const params = handleParam(option.date);
       script.src = url + "?callback=" + callback + params;
       body.appendChild(script);

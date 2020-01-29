@@ -7,7 +7,8 @@ const PromiseLearn = () => import('../components/learn/PromiseLearn');
 const PromisLearn02 = () => import('../components/learn/PromisLearn02');
 const VuexLearn = () => import('../components/learn/VuexLearn');
 const NetComponent = () => import('../components/learn/NetComponent');
-const NetComponet2 = () => import('../components/learn/NetComponet2')
+const NetComponet2 = () => import('../components/learn/NetComponet2');
+const SpringbootTest = () => import('../components/springbootTest/SpringbootTest');
 
 Vue.use(VueRouter);
 
@@ -39,6 +40,9 @@ const router = new VueRouter({
     }, {
       path: '/NetComponet2',
       component: NetComponet2
+    },{
+    path:'/SpringbootTest',
+      component:SpringbootTest
     }
   ]
 });

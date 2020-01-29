@@ -4,14 +4,21 @@ export function request(config) {
   //通用设置
   const instance = axios.create({
     baseURL: '',
-    timeout: 5000
+    timeout: 5000,
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    // transformRequest: [function (data) {
+    //   data = JSON.stringify(data);
+    //   return data;
+    // }]
   });
 
   //拦截器
   //拦截请求
   instance.interceptors.request.use(config => {
       //拦截成功请求
-      console.log(config);
+      // console.log(config);
 
       //可以修改config
 
