@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>学习CSS</title>
+  <style>
+    .div01 {
+      color: red;
+    / / 文字颜色
+    }
+
+    .div02 {
+      font-size: 12px;
+    / / 文字大小
+    }
+
+    .div03 {
+      width: 50px;
+      height: 50px;
+    }
+
+    .div03red {
+      background-color: red;
+    }
+
+    .div03blue {
+      background-color: blue;
+    }
+
+    .div04:hover {
+      color: red;
+    }
+
+
+    a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #369;
+    }
+
+    .div05 > input:focus {
+      background-color: #c5faff;
+    }
+
+    .div06 > a {
+      width: 200px;
+      height: 50px;
+      background-color: yellow;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+<div>
+  <div class="div01">文字颜色</div>
+  <div class="div02">文字大小</div>
+  <div>
+    <div class="div03red div03"></div>
+    <div class="div03blue div03"></div>
+    <div class="div03red div03"></div>
+    <div class="div04">悬浮变色</div>
+    <a href="#" class="a01">链接</a>
+    <div class="div05">
+      <input type="text">
+    </div>
+    <div class="div06">
+      <a href="#">行元素转化为块级元素</a>
+    </div>
+  </div>
+</div>
+</body>
+</html>
