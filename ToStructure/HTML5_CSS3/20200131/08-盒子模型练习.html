@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>盒子模型练习</title>
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body{
+    background-color: #989898;
+  }
+
+  .hot {
+    margin-top: 100px;
+    background-color: #989898;
+    width: 94%;
+    margin-left: 2%;
+    margin-right: 2%;
+    padding-right: 1%;
+    padding-left: 1%;
+    display: flex;
+  }
+
+  .item {
+    width: 24%;
+    margin-left: 0.5%;
+    margin-right: 0.5%;
+  }
+
+  .img, .des, .user, .goods {
+    display: flex;
+    clear: both;
+  }
+
+  .des, .user, .goods{
+    line-height: 24px;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .img {
+    margin-top:  20px;
+    width: 100%;
+    height: 300px;
+    background-color: pink;
+  }
+
+  .des{
+    padding-top: 40px;
+    height: 200px;
+  }
+
+  .user{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #545454;
+  }
+
+  .name{
+    width: 70%;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .price{
+    border-width: 0 0 0 1px;
+    border-style: solid;
+    border-color: #464646;
+    width: 30%;
+    height: 40px;
+    line-height: 40px;
+    color: red;
+    text-align: right;
+  }
+
+
+</style>
+<body>
+
+<div class="hot">
+  <div class="item">
+    <div class="img"></div>
+    <div class="des">快递六，整体不错蓝也可以树苗李娜，红米给你</div>
+    <div class="user">来自于 1543514646的评价</div>
+    <div class="goods">
+      <div class="name">Radmi AirDots真无线蓝牙耳机</div>
+      <div class="price">99.9元</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="img"></div>
+    <div class="des">快递六，整体不错蓝也可以树苗李娜，红米给你</div>
+    <div class="user">来自于 1543514646的评价</div>
+    <div class="goods">
+      <div class="name">Radmi AirDots真无线蓝牙耳机</div>
+      <div class="price">99.9元</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="img"></div>
+    <div class="des">快递六，整体不错蓝也可以树苗李娜，红米给你</div>
+    <div class="user">来自于 1543514646的评价</div>
+    <div class="goods">
+      <div class="name">Radmi AirDots真无线蓝牙耳机</div>
+      <div class="price">99.9元</div>
+    </div>
+  </div>
+  <div class="item">
+    <div class="img"></div>
+    <div class="des">快递六，整体不错蓝也可以树苗李娜，红米给你</div>
+    <div class="user">来自于 1543514646的评价</div>
+    <div class="goods">
+      <div class="name">Radmi AirDots真无线蓝牙耳机</div>
+      <div class="price">99.9元</div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
