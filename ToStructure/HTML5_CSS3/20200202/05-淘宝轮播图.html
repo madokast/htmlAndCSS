@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>05-淘宝轮播图</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .tb-promo {
+      position: relative;
+      width: 520px;
+      height: 280px;
+      background-color: brown;
+      margin: 100px auto;
+    }
+
+    .tb-promo img {
+      width: 520px;
+      height: 280px;
+    }
+
+    .prew, .next {
+      position: absolute;
+      top: 50%;
+      margin-top: -15px;
+      display: block;
+      width: 20px;
+      height: 30px;
+      background-color: rgba(0, 0, 0, 0.3);
+      color: white;
+      line-height: 30px;
+      text-align: center;
+    }
+
+    .prew:hover, .next:hover {
+      background-color: rgba(165, 165, 165, 0.3);
+    }
+
+    .prew {
+      left: 0;
+      border-radius: 0 15px 15px 0;
+    }
+
+    .next {
+      right: 0;
+      border-radius: 15px 0 0 15px;
+    }
+
+    .promo-nar {
+      position: absolute;
+      bottom: 10px;
+      left: 50%;
+      margin-left: -35px;
+      width: 70px;
+      height: 13px;
+      /*background-color: pink;*/
+      border-radius: 7px;
+      background-color: rgba(233, 233, 233, 0.3);
+    }
+
+    .promo-nar li{
+      list-style-type: none;
+      /*display: block;*/
+      float: left;
+      height: 8px;
+      width: 8px;
+      border-radius: 50%;
+      background-color: white;
+      margin: 3px;
+    }
+
+    .promo-nar li:hover{
+      cursor: pointer;
+      background-color: #fff000;
+      /*width: 16px;*/
+    }
+
+
+
+
+  </style>
+</head>
+<body>
+<div class="tb-promo">
+  <img src="https://img.alicdn.com/simba/img/TB11FdnukP2gK0jSZPxSuucQpXa.jpg" alt="广告">
+  <a href="#" class="prew">&lt;</a>
+  <a href="#" class="next">&gt;</a>
+  <ul class="promo-nar">
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+em,
+i {
+    font-style: normal;
+}
+
+img {
+    border: 0;
+    /*取消图片底部有空隙的问题*/
+    vertical-align: middle;
+}
+
+li {
+    list-style-type: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: red;
+}
+
+button,
+input {
+    /*//*/
+}
+
+body {
+    /*文字抗锯齿*/
+    -webkit-font-smoothing: antialiased;
+    background-color: #fff;
+    font: 12px/1.5 "Microsoft YaHei UI";
+    color: #666;
+}
+
+.hide,
+.none {
+    display: none;
+}
+
+.clearfix:after {
+    visibility: hidden;
+    clear: both;
+    display: block;
+    content: "";
+    height: 0;
+}
+
+.clearfix {
+    *zoom: 1;
+}
+
+
+

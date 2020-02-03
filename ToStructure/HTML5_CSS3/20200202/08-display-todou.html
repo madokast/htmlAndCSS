@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .todou{
+      position: relative;
+      width: 444px;
+      height: 320px;
+      background-color: pink;
+      margin: 50px  auto;
+    }
+
+    .todou img{
+      width: 100%;
+      height: 100%;
+    }
+
+    .todou .mask{
+      position: absolute;
+      display: none;
+      /*visibility: hidden;*/
+      width: 100%;
+      height: 100%;
+      top: 0;
+      mask: 0;
+      background-color: rgba(0,0,0,0.7);
+    }
+
+    .todou:hover .mask{
+      display: block;
+    }
+
+  </style>
+</head>
+<body>
+
+<div class="todou">
+  <div class="mask"></div>
+  <img src="https://vthumb.ykimg.com/054201015D5250E88B366090F3EAEBAD" alt="图片">
+</div>
+
+</body>
+</html>

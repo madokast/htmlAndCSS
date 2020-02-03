@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>三角形</title>
+  <style>
+    .box{
+      width: 0;
+      height: 0;
+      /*border: 10px solid pink;*/
+      border-style: solid;
+      border-width: 10px;
+      border-color: pink red blue orange;
+    }
+    .box2{
+      width: 0;
+      height: 0;
+      /*border: 10px solid pink;*/
+      border-style: solid;
+      border-width: 10px;
+      border-color: transparent red transparent transparent;
+    }
+    .big{
+      position: relative;
+      width: 200px;
+      height: 100px;
+      background-color: gray;
+      margin-top: 20px;
+    }
+    .tri{
+      position: absolute;
+      width: 0;
+      height: 0;
+      top: 0;
+      right: 0;
+      margin-right: -20px;
+      border-style: solid;
+      border-width: 10px;
+      border-color:  transparent transparent transparent gray;
+    }
+  </style>
+</head>
+<body>
+<div class="box">
+</div>
+<div class="box2"></div>
+<div class="big">
+  <div class="tri"></div>
+</div>
+</body>
+</html>
