@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>动画</title>
+  <style>
+    @keyframes move {
+      0%{
+        transform: scale(1);
+      }
+      50%{
+        transform: scale(1.5);
+      }
+      100%{
+        transform: scaleX(1);
+      }
+    }
+
+    div{
+      height: 200px;
+      width: 200px;
+      background-color: pink;
+      margin: 100px auto;
+      animation-name: move;
+      animation-duration: 2s;
+    }
+  </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

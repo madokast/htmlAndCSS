@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>scale</title>
+  <style>
+    .box{
+      position: relative;
+      margin: 100px;
+      height: 20px;
+      width: 40px;
+      border: 1px solid pink;
+      overflow: hidden;
+      z-index: 2;
+    }
+
+    .clearfix:before,.clearfix:after{
+      content: "";
+      display: table;
+    }
+
+    .clearfix:after{
+      clear: both;
+    }
+
+    .clearfix{
+      *zoom:1;
+    }
+
+    .info{
+      font-size: 16px;
+      line-height: 20px;
+      position: absolute;
+      /*top:5px;*/
+      transition: all 0.5s;
+      /*border: 1px black dashed;*/
+      z-index: 1;
+    }
+
+    .box:hover .info{
+      transform: scale(1.5,1.5);
+    }
+  </style>
+</head>
+<body>
+<div class="box clearfix">
+  <div class="info">文字</div>
+</div>
+</body>
+</html>
