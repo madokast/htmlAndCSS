@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .room,
+    .room2,
+    .room3,
+    .room4 {
+      float: left;
+      position: relative;
+      transform-style: preserve-3d;
+      margin: 100px;
+    }
+
+    .room2 {
+      transform: rotateY(-45deg) rotateX(30deg);
+    }
+
+    .room3 {
+      transform: rotateY(45deg) rotateX(30deg);
+    }
+
+    .room4 {
+      transform: rotateY(85deg);
+    }
+
+    .front,
+    .up,
+    .down,
+    .back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100px;
+      height: 50px;
+      font-size: 30px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    .front,
+    .up,
+    .down,
+    .back,
+    .left,
+    .right {
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes front {
+      0% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(180deg);
+      }
+
+      100% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(540deg);
+      }
+    }
+
+    .front {
+      background-color: pink;
+      animation-name: front;
+    }
+
+    @keyframes up {
+      0% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(-90deg);
+      }
+
+      100% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(270deg);
+      }
+    }
+
+    .up {
+      background-color: blue;
+      animation-name: up;
+    }
+
+    @keyframes down {
+      0% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(90deg);
+      }
+
+      100% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(450deg);
+      }
+    }
+
+    .down {
+      background-color: green;
+      animation-name: down;
+    }
+
+    @keyframes back {
+      0% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(0deg);
+      }
+
+      100% {
+        transform-origin: 0 25px 25px;
+        transform: rotateX(360deg);
+      }
+    }
+
+    .back {
+      background-color: green;
+      animation-name: back;
+    }
+
+    .left,
+    .right {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50px;
+      height: 50px;
+      font-size: 30px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    @keyframes left {
+      0% {
+        transform-origin: 25px 25px 25px;
+        transform: rotateY(90deg) rotateZ(0deg);
+      }
+      100% {
+        transform-origin: 25px 25px 25px;
+        transform: rotateY(90deg) rotateZ(360deg);
+      }
+    }
+
+    .left {
+      top: 0px;
+      left: 0px;
+      background-color: red;
+      animation-name: left;
+    }
+
+    @keyframes right {
+      0% {
+        transform-origin: 25px 25px 25px;
+        transform: rotateY(-90deg) rotateZ(0deg);
+      }
+      100% {
+        transform-origin: 25px 25px 25px;
+        transform: rotateY(-90deg) rotateZ(-360deg);
+      }
+    }
+
+    .right {
+      top: 0px;
+      left: 50px;
+      background-color: yellow;
+      animation-name: right;
+    }
+  </style>
+</head>
+<body>
+<div class="room">
+  <div class="front">A</div>
+  <div class="up">B</div>
+  <div class="down">C</div>
+  <div class="back">D</div>
+  <div class="left">E</div>
+  <div class="right">F</div>
+</div>
+<div class="room2">
+  <div class="front">A</div>
+  <div class="up">B</div>
+  <div class="down">C</div>
+  <div class="back">D</div>
+  <div class="left">E</div>
+  <div class="right">F</div>
+</div>
+<div class="room3">
+  <div class="front">A</div>
+  <div class="up">B</div>
+  <div class="down">C</div>
+  <div class="back">D</div>
+  <div class="left">E</div>
+  <div class="right">F</div>
+</div>
+<div class="room4">
+  <div class="front">A</div>
+  <div class="up">B</div>
+  <div class="down">C</div>
+  <div class="back">D</div>
+  <div class="left">E</div>
+  <div class="right">F</div>
+</div>
+</body>
+</html>
