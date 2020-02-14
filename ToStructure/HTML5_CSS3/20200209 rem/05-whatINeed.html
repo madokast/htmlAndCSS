@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no"/>
+  <title>05-whatINeed</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style-type: none;
+    }
+
+    /*这是整个页面*/
+    .content {
+      display: flex;
+      width: 98%;
+      box-sizing: border-box;
+      margin: 0 1%;
+    }
+
+    @media screen {
+      /*页面左边一行宽度固定*/
+      .content .info {
+        width: 150px;
+        background-color: gray;
+        line-height: 40px;
+      }
+
+      .content .info .small{
+        display: none;
+      }
+    }
+
+    @media screen and (max-width: 700px){
+      .content .info .small{
+        display: block;
+      }
+
+      /*页面左边一行宽度固定*/
+      .content .info {
+        width: 10px;
+        background-color: gray;
+        line-height: 40px;
+        overflow: hidden;
+      }
+      .content .info .small:hover .content .info{
+        width: 150px;
+      }
+    }
+
+    /*页面右边显示图片，占用剩余宽度*/
+    /*所以父元素.content采用flex布局*/
+    /*而子元素.images使用flex-grow: 1*/
+    /*就可以占用全部宽度*/
+    /*另外.images 也是弹性容器，设置换行、主轴和附轴都是从头开始*/
+    .content .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      flex: 1;
+      background-color: #fffc90;
+    }
+
+    /*装有图片的盒子，设置一个最小宽度用于显示足够信息，并提供换行信号*/
+    /*同时flex: 1; 表示吃满整个一行*/
+    .images .contain,
+    .images .empty{
+      min-width: 250px;
+      padding: 2px;
+      box-sizing: border-box;
+      flex: 1;
+
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
+
+    /*展示图片，设置宽度，等比缩放，且和父盒子.contain走*/
+    .images .contain img {
+      width: 100%;
+      max-height: 250px;
+      object-fit: scale-down;
+      /*width: 98%;*/
+    }
+
+    /*点睛之笔，最后一行元素个数不够，却flex: 1;，会导致最后一行元素大小和前面的不一样*/
+    /*所以后面补上高度为零的空盒子*/
+    .images .empty{
+
+    }
+
+  </style>
+</head>
+<body>
+<div class="content">
+  <div class="info">
+    <div class="small">[-]</div>
+    <ul>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+      <li>这一栏宽度固定</li>
+    </ul>
+  </div>
+  <div class="images">
+
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+    <div class="contain"><img src="./width.jpg" alt="图片"></div>
+    <div class="contain"><img src="./height.jpg" alt="图片"></div>
+    <div class="contain"><img src="./small.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+
+
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+
+
+  </div>
+</div>
+</body>
+</html>

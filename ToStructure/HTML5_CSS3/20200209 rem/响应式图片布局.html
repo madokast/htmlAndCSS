@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>响应式图片布局</title>
+  <style>
+    *{
+      margin: 0;
+      padding:0;
+    }
+    li{
+      list-style-type: none;
+    }
+    h2{
+      text-align: center;
+    }
+    .contain{
+      display: flex;
+    }
+    .over{
+      display: none;
+    }
+
+    @keyframes occupy {
+      100%{
+        width: 500px;
+      }
+    }
+
+    .occupy{
+      width: 0;
+      background-color: pink;
+      overflow: hidden;
+      white-space: nowrap;
+      animation-name: occupy;
+      animation-iteration-count: infinite;
+      animation-duration: 2s;
+      animation-direction: alternate;
+      animation-timing-function: linear;
+    }
+
+    /*--------------------响应式图片布局------------------------*/
+    .images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      flex: 1;
+      background-color: #fff9dc;
+    }
+
+    /*装有图片的盒子，设置一个最小宽度用于显示足够信息，并提供换行信号*/
+    /*同时flex: 1; 表示吃满整个一行*/
+    .images .contain,
+    .images .empty{
+      min-width: 250px;
+      box-sizing: border-box;
+      flex: 1;
+
+      display: flex;
+      justify-items: center;
+      align-items: center;
+    }
+
+    /*展示图片，设置宽度，等比缩放，且和父盒子.contain走*/
+    .images .contain img {
+      padding: 2px;
+      width: 100%;
+      max-height: 250px;
+      object-fit:contain;
+    }
+
+    /*点睛之笔，最后一行元素个数不够，却flex: 1;，会导致最后一行元素大小和前面的不一样*/
+    /*所以后面补上高度为零的空盒子*/
+    .images .empty{
+
+    }
+  </style>
+</head>
+<body>
+<h2>响应式图片布局</h2>
+<span>occupy形式</span>
+<div class="contain">
+  <div class="over">
+    <ul>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+    </ul>
+  </div>
+  <div class="occupy">
+    <ul>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+      <li>列表</li>
+    </ul>
+  </div>
+  <div class="images">
+
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+    <div class="contain"><img src="./width.jpg" alt="图片"></div>
+    <div class="contain"><img src="./height.jpg" alt="图片"></div>
+    <div class="contain"><img src="./small.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./big.jpg" alt="图片"></div>
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+    <div class="contain"><img src="./jd.png" alt="图片"></div>
+
+
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+  </div>
+</div>
+</body>
+</html>
