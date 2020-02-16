@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tab</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        li{
+            list-style-type: none;
+            font-size: 20px;
+            line-height: 20px;
+        }
+        #tab{
+            vertical-align: middle;
+        }
+        #tab ul {
+            display: inline-block;
+            margin: 0;
+            padding: 0 2px 0 2px;
+            border: 2px black solid;
+        }
+        #tab ul li{
+            cursor: pointer;
+        }
+        #tab div{
+            font-size: 80px;
+            border: 2px red solid;
+        }
+    </style>
+</head>
+<body>
+<div id="tab">
+    <ul v-for="(data,index) in tabData">
+        <li @click="onNar=index">{{data.title}}</li>
+    </ul>
+    <div>{{tabData[onNar].content}}</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const tab = new Vue({
+        el:'#tab',
+        data:function () {
+            return{
+                onNar:0,
+                tabData:[
+                    {
+                        title:"aaa",
+                        content:'AAA'
+                    },
+                    {
+                        title:"bbb",
+                        content:'BBB'
+                    },
+                    {
+                        title:"ccc",
+                        content:'CCC'
+                    }
+                ]
+            };
+        }
+    });
+</script>
+</body>
+</html>

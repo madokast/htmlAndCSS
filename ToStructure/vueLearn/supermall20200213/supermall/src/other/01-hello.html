@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        [v-clock]{
+            display: none;
+        }
+        .spancolor{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="hello">
+    <div v-cloak>{{msg}}</div>
+    <input type="text" v-model="msg"/>
+    <div>
+        <span v-text="num"></span>
+        <button @click="num++">+</button>
+    </div>
+    <div>
+        <span :class="{spancolor:isRed}">文字颜色</span>
+        <button @click="isRed=!isRed">X</button>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const hello = new Vue({
+        el:'#hello',
+        data:function (){
+            return{
+                msg:"hello vue",
+                num:1,
+                isRed:true
+            };
+        },
+        methods:{
+
+        },
+        computed:{
+
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03-vMdeal</title>
+</head>
+<body>
+<div id="app">
+    <input type="checkbox" name="isEro" v-model="isEro"> H
+    <div>{{isEro}}</div>
+    <textarea name="desc" id="desc01" cols="30" rows="10" v-model="desc"></textarea>
+    <div>{{desc}}</div>
+    <input type="text" name="num" v-model="num"><span v-cloak>{{nummsg}}</span>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:function () {
+            return{
+                isEro:true,
+                desc:'请输出长文本',
+                num:0
+            };
+        },
+        computed:{
+            nummsg:function () {
+                const pattern =  /^[\d]+$/;
+                if(pattern.test(this.num)){
+                    return "";
+                }else {
+                    return "请输入数字";
+                }
+            }
+        }
+    });
+</script>
+</body>
+</html>
