@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽 slot</title>
+</head>
+<body>
+<div id="app">
+    <cnt></cnt>
+    <hr>
+    <cnt>
+<!--        顺序可以变-->
+        <h1 slot="foot">结尾</h1>
+        <h1>内容</h1>
+        <h1 slot="head">标题</h1>
+    </cnt>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('cnt',{
+        template:`<div>
+<header><slot name="head">无标题</slot></header>
+<slot>默认内容</slot>
+<footer><slot name="foot">无结尾</slot></header>
+</div>`
+    })
+    const app = new Vue({
+        el:'#app',
+    });
+</script>
+</body>
+</html>

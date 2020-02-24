@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05-过滤器</title>
+</head>
+<body>
+<div id="app">
+    <div>{{message}}</div>
+    <input type="text" v-model="inputValue">
+    <div></div>
+    {{inputValue | addOne}}
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    const app = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                message: "学习过滤器",
+                inputValue: ''
+            };
+        },
+        filters: {
+            addOne: function (num) {
+                return ++num;
+            }
+        }
+    });
+</script>
+</body>
+</html>

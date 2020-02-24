@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise</title>
+</head>
+<body>
+<div id="app">
+    <h1>{{msg}}</h1>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    const app = new Vue({
+        el:'#app',
+        data:function () {
+            return{
+                msg:'hello promise'
+            };
+        }
+    });
+
+    // new Promise(((resolve, reject) => {
+    //     setTimeout(()=>{
+    //         resolve('aaaaaa')
+    //     },1000);
+    // })).then(function (data) {
+    //     console.log(data);
+    // });
+    //
+    // fetch('http://192.168.2.10:8070/test/json/repeat/zrx',{
+    //     method:'get'
+    // })
+    // .then(function (data) {
+    //     console.log(data);
+    //     return data.json();
+    // }).then(function (data) {
+    //     console.log(data);
+    //     console.log(data.date);
+    //     console.log(data.data);
+    // })
+
+    axios.post("http://192.168.2.10:8070/test/json/post/person",{
+        name:'zrx',
+        age:12
+    }).then(ret=>{
+        console.log(ret);
+    })
+
+    axios.defaults.timeout = 3000;
+    axios.defaults.baseURL = '/aaa';
+</script>
+</body>
+</html>
