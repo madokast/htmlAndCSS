@@ -2,9 +2,52 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>async await</title>
 </head>
 <body>
-$END$
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+<script>
+    // async 函数
+    // await 得到异步的结果
+
+    axios.defaults.baseURL = 'http://192.168.2.10:8070/test';
+
+    async function query(name,age) {
+        return await axios.post("/json/post/person",{
+            name:name,
+            age:age
+        })
+    }
+
+    query("mdk",13).then(ret=>{
+        console.log(ret);
+    })
+
+    query("zrx",15).then(ret=>{
+        console.log(ret);
+    })
+
+    query("miao",11).then(ret=>{
+        console.log(ret);
+    })
+
+    ////////////////////////////////  多步
+
+    async function query2(name,age) {
+        const person = await axios.post("/json/post/person",{
+            name:name,
+            age:age
+        })
+
+        return await axios.get("/json/repeat/" + person.data.data.name);
+    }
+
+    query2("twice",99).then(data=>{
+        console.log(data);
+    })
+
+</script>
 </body>
 </html>

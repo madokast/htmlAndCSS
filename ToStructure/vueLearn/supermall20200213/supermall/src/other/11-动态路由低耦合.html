@@ -8,10 +8,10 @@
 <div id="app">
     <p>router-link 标签 默认渲染为 a 标签</p>
     <p>to 属性渲染为 href 属性，默认为 # 开头的 hash 地址</p>
-    <router-link to="/user/1">User1</router-link>
-    <router-link to="/user/2">User2</router-link>
-    <router-link to="/user/3">User3</router-link>
-    <router-link to="/user/4">User4</router-link>
+    <router-link to="/user/nabfuiabc">User1</router-link>
+    <router-link to="/user/156813165">User2</router-link>
+    <router-link to="/user/safadf8ydbc">User3</router-link>
+    <router-link to="/user/481dv6sv4fs">User4</router-link>
     <router-link to="/register">Register</router-link>
 
     <hr>
@@ -22,10 +22,28 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 <!--导入路由-->
 <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 <script>
     // 创建两个路由到的组件
     const User = {
-        template: '<h1>{{$route.params.uid}}</h1>'
+        template: '<h1>{{repeated}}</h1>',
+        props: ['uid'],
+        data: function () {
+            return {repeated: ""};
+        },
+        methods: {
+            repeat: async function () {
+
+                await axios.get('http://192.168.2.10:8070/test/json/repeat/' + this.uid)
+                    .then(ret => {
+                        console.log(ret);
+                        this.repeated = ret.data.data + "//" + ret.data.date;
+                    })
+            }
+        },
+        created() {
+            this.repeat();
+        }
     };
 
     const Register = {
@@ -35,7 +53,7 @@
     const router = new VueRouter({
         // routers 数组，内部为json，每个json 由 path 和 component 组成
         routes: [
-            {path: '/user/:uid', component: User},
+            {path: '/user/:uid', component: User, props: true},
             {path: '/register', component: Register}
         ]
     });

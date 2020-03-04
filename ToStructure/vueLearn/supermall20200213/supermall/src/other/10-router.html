@@ -2,9 +2,69 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>router</title>
 </head>
 <body>
-$END$
+<div id="app">
+    <p>router-link 标签 默认渲染为 a 标签</p>
+    <p>to 属性渲染为 href 属性，默认为 # 开头的 hash 地址</p>
+    <router-link to="/user">User</router-link>
+    <router-link to="/register">Register</router-link>
+
+    <hr>
+    <p>router-view 路由占位符</p>
+    <p>将来渲染到router-view 所在位置</p>
+    <router-view></router-view>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!--导入路由-->
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+    // 创建两个路由到的组件
+    const User = {
+        template: '<h1>User</h1>'
+    };
+
+    const Register = {
+        template: `
+        <div>
+        <h1>Register</h1>
+        <p>路由组件内再放入 router-link router-view</p>
+        <router-link to="/register/tab1">tab1</router-link>
+        <router-link to="/register/tab2">tab2</router-link>
+        <router-view></router-view>
+        </div>
+`
+    };
+
+    const RegisterTab1 = {
+        template: '<h2>tab1</h2>'
+    }
+
+    const RegisterTab2 = {
+        template: '<h2>tab2</h2>'
+    }
+
+    const router = new VueRouter({
+        // routers 数组，内部为json，每个json 由 path 和 component 组成
+        routes: [
+            //路由重定向
+            {path: '/', redirect: '/user'},
+            {path: '/user', component: User},
+            {
+                path: '/register', component: Register, children: [
+                    {path: '/register/tab1', component: RegisterTab1},
+                    {path: '/register/tab2', component: RegisterTab2}
+                ]
+            },
+        ]
+    });
+
+    const app = new Vue({
+        el: '#app',
+        // router 挂载到 Vue 根实例中
+        router
+    });
+</script>
 </body>
 </html>

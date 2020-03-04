@@ -2,9 +2,79 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <style>
+        td {
+            border: 1px black solid;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div id="app">
+    <h1>{{title}}</h1>
+    <input type="text" v-model="bookname">
+    <button @click="submitBook">提交</button>
+    <table>
+        <tr v-for="e in books">
+            <td>{{e.id}}</td>
+            <td>{{e.data}}</td>
+            <td>{{e.name}}</td>
+        </tr>
+    </table>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script>
+    axios.defaults.baseURL = 'http://192.168.2.10:8070/test/json';
+
+    const app = new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                title: 'bookstore',
+                bookname: '',
+                books: [{
+                    id: 1,
+                    data: "",
+                    name: 'aaa'
+                }]
+            };
+        },
+        methods: {
+            mountedFun: function () {
+                console.log("mounted")
+                axios.get("/books").then(data => {
+                    console.log(data);
+                    this.books = data.data;
+                    this.title = data.data;
+                })
+            },
+
+            submitBook: function () {
+                this.title = "提交图书" + this.bookname;
+                const that = this;
+                axios.post("/books", {
+                    name: this.bookname
+                }).then(ret=>{
+                    console.log(ret);
+
+                    axios.get("/books/last").then(data=>{
+                        console.log(data.data);
+                        that.title = data.data;
+                        that.books.push(data.data);
+                    });
+                })
+            }
+        },
+        mounted: function () {
+            console.log("mounted")
+            axios.get("/books").then(data => {
+                console.log(data);
+                this.books = data.data;
+                this.title = data.data;
+            })
+        }
+    });
+</script>
 </body>
 </html>

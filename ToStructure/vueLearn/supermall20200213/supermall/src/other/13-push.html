@@ -8,9 +8,12 @@
 <div id="app">
     <p>router-link 标签 默认渲染为 a 标签</p>
     <p>to 属性渲染为 href 属性，默认为 # 开头的 hash 地址</p>
-    p{命名路由，这样动态绑定to 使用json}
+    <p>命名路由，这样动态绑定to 使用json</p>
     <router-link :to="{name:'user',params:{uid:3}}">User</router-link>
     <router-link to="/register">Register</router-link>
+    <hr>
+    <p>编程式导航</p>
+    <button @click="goRegister">编程式导航</button>
 
     <hr>
     <p>router-view 路由占位符</p>
@@ -34,8 +37,14 @@
         template: `
         <div>
         <h1>Register</h1>
+        <button @click="back">后退</button>
         </div>
-`
+`,
+        methods: {
+            back(){
+                this.$router.go(-1);
+            }
+        }
     };
 
     const router = new VueRouter({
@@ -47,7 +56,13 @@
 
     const app = new Vue({
         el:'#app',
-        router
+        router,
+        methods:{
+            //编程式导航
+            goRegister(){
+                this.$router.push('/register');
+            }
+        }
     });
 </script>
 </body>

@@ -2,9 +2,53 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
 </head>
 <body>
-$END$
+<div id="app">
+    <p>router-link 标签 默认渲染为 a 标签</p>
+    <p>to 属性渲染为 href 属性，默认为 # 开头的 hash 地址</p>
+    p{命名路由，这样动态绑定to 使用json}
+    <router-link :to="{name:'user',params:{uid:3}}">User</router-link>
+    <router-link to="/register">Register</router-link>
+
+    <hr>
+    <p>router-view 路由占位符</p>
+    <p>将来渲染到router-view 所在位置</p>
+    <router-view></router-view>
+</div>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+<!--导入路由-->
+<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+<script>
+    const User = {
+        template: `
+        <div>
+        <h1>User - {{uid}}</h1>
+        </div>
+`,
+        props:['uid']
+    };
+
+    const Register = {
+        template: `
+        <div>
+        <h1>Register</h1>
+        </div>
+`
+    };
+
+    const router = new VueRouter({
+        routes:[
+            {path:'/user',component:User,name:'user',props:true},
+            {path:'/register',component:Register}
+        ]
+    });
+
+    const app = new Vue({
+        el:'#app',
+        router
+    });
+</script>
 </body>
 </html>
